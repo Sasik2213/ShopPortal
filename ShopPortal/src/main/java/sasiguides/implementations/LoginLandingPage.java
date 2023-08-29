@@ -29,13 +29,13 @@ public class LoginLandingPage extends AbstractComponent {
 	@FindBy(css = "[class*='flyInOut']")
 	WebElement errorMessage;
 	
-//	public ProductCataloguePage loginActions(String userEmail,String userPassword) {
-//		email.sendKeys(userEmail);
-//		password.sendKeys(userPassword);
-//		submit.click();
-//		ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
-//		return productCataloguePage;
-//	}
+	public ProductCataloguePage loginActions(String userEmail,String userPassword) {
+		email.sendKeys(userEmail);
+		password.sendKeys(userPassword);
+		submit.click();
+		ProductCataloguePage productCataloguePage = new ProductCataloguePage(driver);
+		return productCataloguePage;
+	}
 	public void goToSite() {
 		driver.get("https://rahulshettyacademy.com/client");
 	}

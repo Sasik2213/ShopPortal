@@ -9,6 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import sasiguides.implementations.CartPage;
+import sasiguides.implementations.OrderPage;
+
 public class AbstractComponent {
 	WebDriver driver;
 	public AbstractComponent(WebDriver driver) {
@@ -35,6 +38,16 @@ public class AbstractComponent {
 
 		WebDriverWait waits = new WebDriverWait(driver, Duration.ofSeconds(3));
 		waits.until(ExpectedConditions.visibilityOf(findBy));
+	}
+	public CartPage gotoCartPage() {
+		cartHeader.click();
+		CartPage cartPage = new CartPage(driver);
+		return cartPage;
+	}
+	public OrderPage gotoOrderPage() {
+		orderHeader.click();
+		OrderPage orderPage = new OrderPage(driver);
+		return orderPage;
 	}
 
 }
